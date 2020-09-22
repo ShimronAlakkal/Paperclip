@@ -10,6 +10,7 @@ A new Flutter project.
 ```
 Stack Used :
 Flutter 
+Dart
 
 >dependencies :
 1 . Sqflite
