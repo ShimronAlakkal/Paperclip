@@ -16,4 +16,4 @@ Sqflite .
 5 . 
 ```
 ## 
-[CONTACT] (https://www.instagram.com/shimron.alakkal/)
+[Instagram](https://www.instagram.com/shimron.alakkal/)
