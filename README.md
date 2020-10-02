@@ -25,7 +25,9 @@ Dart
 2 . Alarm with Local Notifications
 3 . Dark Theme support 
 4 . Custom Notelist UI
-5 . Cloud Storage for data (if required by the users)
+5 . Minimal UI
+6 . Cloud Storage for data (if required by the users)
+7 . Sub Tasks(Notes) options
 ```
 # 
 Connect with us on [Instagram](https://www.instagram.com/shimron.alakkal)
