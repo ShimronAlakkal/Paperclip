@@ -1,31 +1,63 @@
+import 'package:TDM/models/databaseModel.dart';
+import 'package:TDM/utils/DatabaseHelper.dart';
 import 'package:flutter/material.dart';
-
 
 class EditNote extends StatefulWidget {
   final String appBarTitle;
   final String buttonText;
-  EditNote( this.appBarTitle, this.buttonText);
+  final DatabaseModel noteModel;
+
+  EditNote(this.noteModel, this.appBarTitle, this.buttonText);
 
   @override
   State<StatefulWidget> createState() {
-    return _EditNoteState( this.appBarTitle, this.buttonText);
+    return _EditNoteState(this.noteModel, this.appBarTitle, this.buttonText);
   }
 }
 
 class _EditNoteState extends State<EditNote> {
-  final String appBarTitle;
-  final String buttonText;
+  @override
+  void initState() {
+    super.initState();
+    if (noteModel.priority == 1) {
+      setState(() {
+        this.dfltpriority = 'High';
+      });
+    } else {
+      setState(() {
+        this.dfltpriority = 'Low';
+      });
+    }
+    setState(() {
+      _helper = DatabaseHelper.instance;
+    });
+  }
+
+  _EditNoteState(this.noteModel, this.appBarTitle, this.buttonText);
+
+  String appBarTitle;
+  String buttonText;
+  DatabaseModel noteModel;
+
+  // creating the instance of the helper so that we are able to use the functions after the initdatabase
+  DatabaseHelper _helper;
 
   var formkey = GlobalKey<FormState>();
-  _EditNoteState( this.appBarTitle, this.buttonText);
 
   var list = ['High', 'Low'];
   var dfltpriority = 'Low';
+  String supportPriority;
+  int priorityNum;
   TextEditingController titleTextController = TextEditingController();
   TextEditingController descTextController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
+    if (noteModel.id != null) {
+      titleTextController.text = noteModel.title;
+      descTextController.text = noteModel.description;
+    }
+
     return Scaffold(
       resizeToAvoidBottomPadding: true,
       appBar: AppBar(
@@ -70,7 +102,7 @@ class _EditNoteState extends State<EditNote> {
                         elevation: 10,
                         dropdownColor: Colors.amber,
                         icon: Icon(Icons.arrow_drop_down),
-                        value: dfltpriority,
+                        value: this.dfltpriority,
                         onChanged: (String selectedPriority) {
                           setState(() {
                             this.dfltpriority = selectedPriority;
@@ -92,38 +124,39 @@ class _EditNoteState extends State<EditNote> {
                   /// //
 ///////////////////////////////////////////////////////////////////////////
                   Padding(
-                    padding: EdgeInsets.symmetric(vertical: 15),
+                    padding: EdgeInsets.only(top: 15, bottom: 5),
                     child: TextFormField(
-                      onChanged: (value) {
-                        // code for the title editing goes here !!!
-                      },
                       keyboardAppearance: Brightness.dark,
-                      validator: (String value) {
+                      textDirection: TextDirection.ltr,
+                      // ignore: missing_return
+                      validator: (value) {
                         if (value.isEmpty) {
                           return 'Please enter a title , its required !!! ';
+                        } else {
+                          titleTextController.text = value;
                         }
                       },
                       cursorColor: Colors.amberAccent,
                       controller: titleTextController,
-                      textDirection: TextDirection.ltr,
-                      autocorrect: true,
+
                       decoration: InputDecoration(
-                          border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(10)),
-                          labelText: 'Task',
-                          labelStyle: TextStyle(
-                            color: Colors.black54,
-                            fontSize: 18,
-                            fontStyle: FontStyle.normal,
-                            fontWeight: FontWeight.bold,
-                          ),
-                          hintText: 'Please enter the task here (required)',
-                          hintStyle: TextStyle(
-                            color: Colors.black26,
-                            fontSize: 15,
-                            fontStyle: FontStyle.normal,
-                            fontWeight: FontWeight.w300,
-                          )),
+                        border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(10)),
+                        labelText: 'Title',
+                        labelStyle: TextStyle(
+                          color: Colors.black54,
+                          fontSize: 18,
+                          fontStyle: FontStyle.normal,
+                          fontWeight: FontWeight.bold,
+                        ),
+                        hintText: 'Please enter the task here (required)',
+                        hintStyle: TextStyle(
+                          color: Colors.black26,
+                          fontSize: 15,
+                          fontStyle: FontStyle.normal,
+                          fontWeight: FontWeight.w300,
+                        ),
+                      ),
                     ),
                   ),
 
@@ -133,15 +166,13 @@ class _EditNoteState extends State<EditNote> {
                   /// //
 ///////////////////////////////////////////////////////////////////////////
                   Padding(
-                    padding: EdgeInsets.only(top: 15, bottom: 30),
-                    child: TextField(
-                      onChanged: (value) {
-                        //  the code for the text field of description goes here 
-                      },
-                      keyboardAppearance: Brightness.dark,
-                      autocorrect: true,
-                      controller: descTextController,
-                      decoration: InputDecoration(
+                    padding: EdgeInsets.only(top: 5, bottom: 30),
+                    child: Container(
+                      child: TextField(
+                        onSubmitted: (value) => descTextController.text = value,
+                        keyboardAppearance: Brightness.dark,
+                        controller: descTextController,
+                        decoration: InputDecoration(
                           border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(10)),
                           labelText: 'Description',
@@ -158,7 +189,9 @@ class _EditNoteState extends State<EditNote> {
                             fontSize: 15,
                             fontStyle: FontStyle.normal,
                             fontWeight: FontWeight.w300,
-                          )),
+                          ),
+                        ),
+                      ),
                     ),
                   ),
 
@@ -186,44 +219,32 @@ class _EditNoteState extends State<EditNote> {
                               Tooltip(message: '$buttonText NOTE TO THE LIST');
                             },
                             onPressed: () {
-                              setState(() {
-                                if (formkey.currentState.validate()) {
-                                  //  code for the add button goes here also apply for the save button as well 
-                                  
-                                }
-                              });
+                              if (buttonText == 'ADD') {
+                                setState(
+                                  () {
+                                    _onSubmit();
+                                  },
+                                );
+                              } else {
+                                setState(() {
+                                  noteModel.description =
+                                      descTextController.text;
+                                  noteModel.title = titleTextController.text;
+                                  _onUpdateNote(DatabaseModel(
+                                    id: noteModel.id,
+                                    title: noteModel.title,
+                                    description: noteModel.description,
+                                    priority: _getPriorityToNum(dfltpriority),
+                                  ));
+                                  _backToMainPage();
+                                });
+                              }
                             },
                           ),
                         ),
                       ),
                     ],
                   ),
-////////////////////////////////////////////////////////////////////////
-                  ///
-                  ///                   del button                       //
-                  /// //
-//////////////////////////////////////////////////////////////////////////
-
-                  Row(
-                    children: [
-                      Expanded(
-                          child: Container(
-                        height: 70,
-                        padding: EdgeInsets.only(top: 20),
-                        child: RaisedButton(
-                          onPressed: () {
-                            //  here is the code to delete the thing
-                           
-                          },
-                          color: Colors.white,
-                          child: Text(
-                            'DELETE',
-                            style: TextStyle(color: Colors.black, fontSize: 18),
-                          ),
-                        ),
-                      )),
-                    ],
-                  )
                 ],
               ),
             ),
@@ -232,5 +253,45 @@ class _EditNoteState extends State<EditNote> {
       ),
     );
   }
-}
 
+  _backToMainPage() {
+    Navigator.pop(context, true);
+  }
+
+  _onUpdateNote(DatabaseModel noteModel) {
+    _helper.updateNote(noteModel);
+  }
+
+  _onSubmit() async {
+    descTextController.text += ' ';
+    if (formkey.currentState.validate() && descTextController.text != null) {
+      _backToMainPage();
+      if (this.dfltpriority == 'High') {
+        this.priorityNum = 1;
+
+        try {
+          await _helper.insertNote(DatabaseModel(
+              title: titleTextController.text,
+              description: descTextController.text,
+              priority: priorityNum));
+        } catch (e) {}
+      } else {
+        this.priorityNum = 0;
+        try {
+          await _helper.insertNote(DatabaseModel(
+              title: titleTextController.text,
+              description: descTextController.text,
+              priority: priorityNum));
+        } catch (e) {}
+      }
+    }
+  }
+
+  int _getPriorityToNum(String priority) {
+    if (priority == 'High') {
+      return 1;
+    } else {
+      return 0;
+    }
+  }
+}

@@ -9,8 +9,8 @@ void main() {
         accentColor: Colors.amberAccent,
         primaryColor: Colors.amber,
       ),
-      title: 'ToDoManager',
-      home: Notelist(), 
+      title: 'Stellar Notes',
+      home: Notelist(),
     ),
   ); // runApp
 }
