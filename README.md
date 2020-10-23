@@ -17,6 +17,7 @@ Dart
 1 . Sqflite
 2 . Path_provider
 3 . intl 
+4 . shared_preferences
 
 ```
 ##
