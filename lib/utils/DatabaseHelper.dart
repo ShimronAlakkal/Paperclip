@@ -33,7 +33,9 @@ class DatabaseHelper {
     ${DatabaseModel.colId} INTEGER PRIMARY KEY AUTOINCREMENT ,
     ${DatabaseModel.colTitle} TEXT NOT NULL ,
     ${DatabaseModel.colDescription} TEXT,
-    ${DatabaseModel.colPriority} INTEGER NOT NULL
+    ${DatabaseModel.colPriority} INTEGER NOT NULL,
+    ${DatabaseModel.colDate} TEXT,
+    ${DatabaseModel.colDeadline} TEXT 
   )
   ''');
   }
