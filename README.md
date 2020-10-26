@@ -4,7 +4,7 @@
 
 
 ## Stellar Basics Notes Keeper 
-> `Stallar Basics` is a group of developers who are working on developing and improving techs which are basics and easy . We create an evironment for people to connect with tech and use it to complete daily/weekly/monthly/yearly tasks -- which are good though !!! .
+> `Stallar Basics` is a group of developers who are working on developing and improving techs which are basics and easy . We create an evironment for people to connect with tech and use it to complete daily/weekly/monthly/yearly tasks -- which are good though !!! . 
 
 #
 ## Installation
@@ -34,9 +34,8 @@ Dart
 2 . Alarm with Local Notifications
 3 . Dark Theme support 
 4 . Custom Notelist UI
-5 . Minimal UI
 6 . Cloud Storage for data (if required by the users)
-7 . Sub Tasks(Notes) options
+8 . Media with Notes including video , audio , images etc...
 ```
 #
 Find out the required front-end codes from **main.dart** , **screens** ...
@@ -46,4 +45,5 @@ Connect with us on [Instagram](https://www.instagram.com/shimron.alakkal)
 
 ##
 This is just the first app developed by the team at `Stellar Basics` . Feel free to connect with us if you find any flaws in our app , we would appreciate it .
-#
+This is a free version of Setllar Basic's paperclip .
+You are free to use the code to create your own app or contribute to our app which after inspection is taken or discussed .
