@@ -7,6 +7,13 @@
 > `Stallar Basics` is a group of developers who are working on developing and improving techs which are basics and easy . We create an evironment for people to connect with tech and use it to complete daily/weekly/monthly/yearly tasks -- which are good though !!! .
 
 #
+## Installation
+```bash
+git clone https://github.com/ShimronAlakkal/Stellar-Basics-Notes-manager/
+cd Stellar-Basics-Notes-Manager
+```
+
+#
 
 ```
 Stack Used :
