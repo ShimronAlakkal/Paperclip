@@ -14,10 +14,9 @@ git clone https://github.com/ShimronAlakkal/Stellar-Basics-Notes-manager/
 cd Stellar-Basics-Notes-Manager
 ```
 
-#
+## Stack Used :
 
 ```
-Stack Used :
 Flutter 
 Dart
 
