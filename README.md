@@ -38,8 +38,8 @@ Dart
 5 . Media with Notes including video , audio , images etc...
 ```
 #
-Find out the required front-end codes from **main.dart** , **screens** ,**utils** and **database Helper**  
-Utils (back-end) is currently under development .So we've not uploaded the code for the back-end now . It'll be up soon...
+Find out the required front-end codes from **main.dart** , **screens** ,**utils**  
+Find out the required back-end codes from  **database Helper** and **utils/databaseHelper**
 # 
 Connect with us on [Instagram](https://www.instagram.com/shimron.alakkal)
 
