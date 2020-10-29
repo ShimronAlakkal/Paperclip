@@ -21,11 +21,12 @@ Flutter
 Dart
 
 >dependencies :
-1 . Sqflite
-2 . Path_provider
-3 . intl 
-4 . shared_preferences
-
+  intl: ^0.16.1
+  path_provider: ^1.6.14
+  provider: ^4.3.2+2
+  shared_preferences: ^0.5.8
+  sqflite: ^1.3.1+1
+  url_launcher: ^5.7.5
 ```
 ##
 **UPCOMING FEATURES**
