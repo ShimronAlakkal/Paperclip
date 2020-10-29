@@ -1,9 +1,5 @@
 # P A P E R C L I P  
 >from Stellar Basics
-![counter](https://[YourEndpoint].m.pipedream.net)
-![ReadMe Card](https://github-readme-stats.vercel.app/api/pin/?username=ShimronAlakkal&repo=Kivy-KivyMD-tutorials)
-![Github stats](https://github-readme-stats.vercel.app/api?username=ShimronAlakkal)
-
 
 **COPY THE `lib` DIRECTORY AND THE `pubspec.yaml` FILE ONLY TO REDUCE THE LOAD -- ALL THE REQUIRED FOLDERS FOR A FLUTTER PROJECT AREN'T PRESENT TOO**
 
@@ -46,6 +42,10 @@ Find out the required front-end codes from **main.dart** , **screens** ,**utils*
 Utils (back-end) is currently under development .So we've not uploaded the code for the back-end now . It'll be up soon...
 # 
 Connect with us on [Instagram](https://www.instagram.com/shimron.alakkal)
+
+Also check out the below repository if you wanna know how to develop working apps with python kivy framework
+![ReadMe Card](https://github-readme-stats.vercel.app/api/pin/?username=ShimronAlakkal&repo=Kivy-KivyMD-tutorials)
+
 
 ##
 This is just the first app developed by the team at `Stellar Basics` . Feel free to connect with us if you find any flaws in our app , we would appreciate it .
