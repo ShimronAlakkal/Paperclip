@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:intl/intl.dart';
 import 'package:TDM/models/databaseModel.dart';
 import 'package:TDM/utils/DatabaseHelper.dart';
@@ -41,6 +43,8 @@ class _EditNoteState extends State<EditNote> {
     }
   }
 
+  var _timeOfDay = '';
+
   _EditNoteState(this.noteModel, this.appBarTitle, this.buttonText);
 
   String appBarTitle;
@@ -66,21 +70,40 @@ class _EditNoteState extends State<EditNote> {
     return Scaffold(
       resizeToAvoidBottomPadding: true,
       appBar: AppBar(
+        centerTitle: true,
         backgroundColor: Colors.amber,
         leading: IconButton(
-            icon: Icon(Icons.arrow_back),
+            icon: Icon(
+              Icons.arrow_back_ios,
+              size: 16.5,
+            ),
             onPressed: () {
               Navigator.pop(context);
             }),
-        title: Text(appBarTitle),
+        title: Text(
+          appBarTitle,
+          style: TextStyle(
+            color: Colors.white,
+            letterSpacing: 2.5,
+            fontWeight: FontWeight.w500,
+          ),
+        ),
+        actions: [
+          IconButton(
+            icon: Icon(Icons.notifications_none_outlined),
+            onPressed: () {
+              setState(() {});
+            },
+          ),
+        ],
       ),
       body: Form(
         key: formkey,
         child: ListView(
           children: [
             Container(
-              padding: EdgeInsets.symmetric(vertical: 20),
-              margin: EdgeInsets.only(top: 10, left: 10, right: 10),
+              padding: EdgeInsets.symmetric(vertical: 5),
+              margin: EdgeInsets.only(top: 5, left: 10, right: 10),
               child: Column(
                 children: [
 ////////////////////////////////////////////////////////////////////////
@@ -93,7 +116,7 @@ class _EditNoteState extends State<EditNote> {
                     height: MediaQuery.of(context).size.height * 0.1,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
-                      color: Colors.grey.withOpacity(0.2),
+                      color: Colors.grey.withOpacity(0.3),
                     ),
                     child: Row(
                       children: [
@@ -127,7 +150,7 @@ class _EditNoteState extends State<EditNote> {
                               value: priority,
                             );
                           }).toList(),
-                        )
+                        ),
                       ],
                     ),
                   ),
@@ -140,7 +163,7 @@ class _EditNoteState extends State<EditNote> {
                   Padding(
                     padding: EdgeInsets.only(top: 10, bottom: 5),
                     child: Container(
-                      height: MediaQuery.of(context).size.height * 0.14,
+                      height: MediaQuery.of(context).size.height * 0.15,
                       padding: EdgeInsets.only(left: 10),
                       decoration: BoxDecoration(
                           color: Colors.grey.withOpacity(0.3),
@@ -172,13 +195,6 @@ class _EditNoteState extends State<EditNote> {
                             fontStyle: FontStyle.normal,
                             fontWeight: FontWeight.bold,
                           ),
-                          // hintText: 'Please enter the task here (required)',
-                          // hintStyle: TextStyle(
-                          //   color: Colors.black26,
-                          //   fontSize: 15,
-                          //   fontStyle: FontStyle.normal,
-                          //   fontWeight: FontWeight.w300,
-                          // ),
                         ),
                       ),
                     ),
@@ -196,7 +212,7 @@ class _EditNoteState extends State<EditNote> {
                       padding: EdgeInsets.only(left: 10),
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(8),
-                          color: Colors.grey.withOpacity(0.2)),
+                          color: Colors.grey.withOpacity(0.3)),
                       child: TextField(
                         cursorColor: Colors.red,
                         maxLines: 6,
@@ -213,9 +229,8 @@ class _EditNoteState extends State<EditNote> {
                             fontWeight: FontWeight.bold,
                           ),
                           hintText:
-                              'Enter a description for this task (optional)',
+                              'Description or sub-points for this task(optional)',
                           hintStyle: TextStyle(
-                            color: Colors.black26,
                             fontSize: 15,
                             fontStyle: FontStyle.normal,
                             fontWeight: FontWeight.w300,
@@ -258,13 +273,29 @@ class _EditNoteState extends State<EditNote> {
                             ),
                             margin: EdgeInsets.only(left: 10, right: 5),
                             padding: EdgeInsets.all(5),
-                            child: Text(
-                              '$deadline',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 18,
-                                fontWeight: FontWeight.normal,
-                              ),
+                            child: Row(
+                              children: [
+                                Expanded(
+                                  child: Text(
+                                    '$deadline ,',
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.normal,
+                                    ),
+                                  ),
+                                ),
+                                Expanded(
+                                  child: Text(
+                                    '$_timeOfDay',
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.normal,
+                                    ),
+                                  ),
+                                )
+                              ],
                             ),
                           ),
                         ),
@@ -409,10 +440,16 @@ class _EditNoteState extends State<EditNote> {
       lastDate: DateTime(DateTime.now().year + 10),
     );
 
-    if (date != null) {
-      var val = ('${date.year}-' + '${date.month}-' + '${date.day}').toString();
+    var time = await showTimePicker(
+      context: context,
+      initialTime: TimeOfDay.now(),
+    );
+
+    if (date != null && time != null) {
       setState(() {
-        deadline = val;
+        deadline =
+            ('${date.year}-' + '${date.month}-' + '${date.day}').toString();
+        _timeOfDay = '${time.hour}' + ' ${time.minute}';
       });
     }
   }

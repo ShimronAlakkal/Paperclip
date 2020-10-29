@@ -1,7 +1,11 @@
+import 'dart:ui';
+
 import 'package:url_launcher/url_launcher.dart';
 import 'package:flutter/material.dart';
 
 class Settings extends StatefulWidget {
+  final String themePref;
+  Settings({this.themePref});
   @override
   State<StatefulWidget> createState() {
     return SettingState();
@@ -9,19 +13,43 @@ class Settings extends StatefulWidget {
 }
 
 class SettingState extends State<Settings> {
+  String themePref;
+  bool panelActive = false;
+  SettingState({this.themePref});
   @override
   void initState() {
     super.initState();
-    // _getPrefs();
+
+    if (themePref == 'darkTheme') {
+      setState(
+        () {
+          panelActive = true;
+        },
+      );
+    } else {
+      panelActive = false;
+    }
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Settings'),
+        centerTitle: true,
+        title: Text(
+          'Settings',
+          style: TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.w500,
+            letterSpacing: 2.5,
+          ),
+        ),
         leading: IconButton(
-          icon: Icon(Icons.arrow_back),
+          icon: Icon(
+            Icons.arrow_back_ios,
+            color: Colors.black,
+            size: 16.5,
+          ),
           onPressed: () {
             Navigator.pop(context);
           },
@@ -29,8 +57,6 @@ class SettingState extends State<Settings> {
       ),
       body: ListView(
         children: [
-          //
-
           ListTile(
             leading: Icon(Icons.contacts),
             title: Text('Contact or Report an Issue'),
@@ -63,7 +89,6 @@ class SettingState extends State<Settings> {
                   'here is the url for news letter things');
             },
           ),
-
           ExpansionTile(
             leading: Icon(Icons.file_copy),
             title: Text(

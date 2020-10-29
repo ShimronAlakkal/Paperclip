@@ -1,17 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import './screens/notelist.dart';
+import 'package:TDM/utils/themeData.dart';
 
 Future<void> main() async {
   runApp(
-    MaterialApp(
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        accentColor: Colors.amberAccent,
-        primaryColor: Colors.amber,
-        brightness: Brightness.light,
+    ChangeNotifierProvider(
+      create: (context) => ThemeNotifier(),
+      child: Consumer<ThemeNotifier>(
+        builder: (context, ThemeNotifier notifier, child) {
+          return MaterialApp(
+            debugShowCheckedModeBanner: false,
+            theme: notifier.darkTheme == true ? dark : light,
+            title: 'Stellar Notes',
+            home: Notelist(),
+          );
+        },
       ),
-      title: 'Stellar Notes',
-      home: Notelist(),
     ),
   );
 }
