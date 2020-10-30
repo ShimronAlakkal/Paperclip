@@ -1,53 +1,17 @@
-# P A P E R C L I P  
->from Stellar Basics
-
-**COPY THE `lib` DIRECTORY AND THE `pubspec.yaml` FILE ONLY TO REDUCE THE LOAD -- ALL THE REQUIRED FOLDERS FOR A FLUTTER PROJECT AREN'T PRESENT TOO**
-
-
-## Stellar Basics Notes Keeper 
-> `Stallar Basics` is a group of developers who are working on developing and improving techs which are basics and easy . We create an evironment for people to connect with tech and use it to complete daily/weekly/monthly/yearly tasks -- which are good though !!! . 
-
+#TDM
 #
-## Installation
-```bash
-git clone https://github.com/ShimronAlakkal/Stellar-Basics-Notes-manager/
-cd Stellar-Basics-Notes-Manager
+## STELLAR BASICS NOTES APP 
+> this is basically a beta of the `STELLAR BASICS` notes app which allows you to keep your notes ,tasks ,reminders , events ,and many other things you can come up with in one single platfrom . You could use our service for no cost , whatsoever . 
 ```
-
-## Stack Used :
-
-```
-Flutter 
-Dart
-
->dependencies :
-  intl: ^0.16.1
-  path_provider: ^1.6.14
-  provider: ^4.3.2+2
-  shared_preferences: ^0.5.8
-  sqflite: ^1.3.1+1
-  url_launcher: ^5.7.5
-```
-##
-**UPCOMING FEATURES**
-```
+Features to be added in the coming updates :
 1 . Local Notifications
-2 . Alarm with Local Notifications 
-3 . Custom Notelist UI
-4 . Cloud Storage for data (if required by the users)
-5 . Media with Notes including video , audio , images etc...
+2 . Ringings and other alarms with the notifications 
+3 . Local Authentications for much more privacy , much simply
+4 . Cloud storage for your notes just so as to keep your device free of storage consumption
+5 . Multi-Coloured ui 
+6 . Dark theme support 
 ```
 #
-Find out the required front-end codes from **main.dart** , **screens** ,**utils**  
-Find out the required back-end codes from  **database Helper** and **utils/databaseHelper**
+much more to come from the developers at **STELLAR BASICS** . Join our community [here](https://github.com/ShimronAlakkal/) to contribute your ideas and code ...
 # 
-Connect with us on [Instagram](https://www.instagram.com/shimron.alakkal)
-
-Also check out the below repository if you wanna know how to develop working apps with python kivy framework
-![ReadMe Card](https://github-readme-stats.vercel.app/api/pin/?username=ShimronAlakkal&repo=Kivy-KivyMD-tutorials)
-
-
-##
-This is just the first app developed by the team at `Stellar Basics` . Feel free to connect with us if you find any flaws in our app , we would appreciate it .
-This is a free version of Setllar Basic's paperclip .
-You are free to use the code to create your own app or contribute to our app which after inspection is taken or discussed .
+and also feel free to [contact](https://www.instagram.com/shimron.alakkal) us if you have any feedbacks or bug reports or literally anything about the app
