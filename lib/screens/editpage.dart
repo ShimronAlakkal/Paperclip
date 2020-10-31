@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:intl/intl.dart';
 import 'package:TDM/models/databaseModel.dart';
 import 'package:TDM/utils/DatabaseHelper.dart';
@@ -41,12 +39,16 @@ class _EditNoteState extends State<EditNote> {
       titleTextController.text = noteModel.title;
       descTextController.text = noteModel.description;
     }
+    if (noteModel.deadlineTime != null) {
+      _timeOfDay = noteModel.deadlineTime.toString();
+    } else {
+      _timeOfDay = ' ';
+    }
   }
-
-  var _timeOfDay = '';
 
   _EditNoteState(this.noteModel, this.appBarTitle, this.buttonText);
 
+  String _timeOfDay;
   String appBarTitle;
   String buttonText;
   DatabaseModel noteModel;
@@ -88,14 +90,6 @@ class _EditNoteState extends State<EditNote> {
             fontWeight: FontWeight.w500,
           ),
         ),
-        actions: [
-          IconButton(
-            icon: Icon(Icons.notifications_none_outlined),
-            onPressed: () {
-              setState(() {});
-            },
-          ),
-        ],
       ),
       body: Form(
         key: formkey,
@@ -351,6 +345,7 @@ class _EditNoteState extends State<EditNote> {
                                               .format(DateTime.now())
                                               .toString(),
                                           deadline: deadline,
+                                          deadlineTime: _timeOfDay,
                                         ),
                                       );
                                       _backToMainPage();
@@ -397,11 +392,13 @@ class _EditNoteState extends State<EditNote> {
           String date = formatter.format(now).toString();
           await _helper.insertNote(
             DatabaseModel(
-                title: titleTextController.text,
-                description: descTextController.text,
-                priority: priorityNum,
-                date: date,
-                deadline: deadline),
+              title: titleTextController.text,
+              description: descTextController.text,
+              priority: priorityNum,
+              date: date,
+              deadline: deadline,
+              deadlineTime: _timeOfDay,
+            ),
           );
         } catch (e) {}
       } else {
@@ -417,6 +414,7 @@ class _EditNoteState extends State<EditNote> {
               priority: priorityNum,
               date: date,
               deadline: deadline,
+              deadlineTime: _timeOfDay,
             ),
           );
         } catch (e) {}
@@ -445,12 +443,19 @@ class _EditNoteState extends State<EditNote> {
       initialTime: TimeOfDay.now(),
     );
 
-    if (date != null && time != null) {
-      setState(() {
-        deadline =
-            ('${date.year}-' + '${date.month}-' + '${date.day}').toString();
-        _timeOfDay = '${time.hour}' + ' ${time.minute}';
-      });
+    if (date != null) {
+      setState(
+        () {
+          deadline =
+              ('${date.year}-' + '${date.month}-' + '${date.day}').toString();
+        },
+      );
+    }
+    if (time != null) {
+      MaterialLocalizations localizations = MaterialLocalizations.of(context);
+      String formattedTime =
+          localizations.formatTimeOfDay(time, alwaysUse24HourFormat: false);
+      _timeOfDay = formattedTime.toString();
     }
   }
 }

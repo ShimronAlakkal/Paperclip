@@ -15,7 +15,6 @@ ThemeData light = ThemeData(
 
 class ThemeNotifier extends ChangeNotifier {
   final String key = 'theme';
-  // ignore: unused_field
   SharedPreferences _preferences;
   bool _darkTheme;
   bool get darkTheme => _darkTheme;
@@ -25,12 +24,8 @@ class ThemeNotifier extends ChangeNotifier {
     _loadFromPrefs();
   }
 
-  // ignore: unused_element
   changeTheme() {
     _darkTheme = !_darkTheme;
-
-    debugPrint(
-        'the dark theme value is $_darkTheme and the key is $key ********  changing the theme  but the original darktheme is $darkTheme ');
     _saveToPrefs();
     notifyListeners();
   }

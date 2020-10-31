@@ -4,7 +4,6 @@ import 'package:TDM/utils/DatabaseHelper.dart';
 import 'package:TDM/utils/themeData.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-// import 'package:shared_preferences/shared_preferences.dart';
 import './editpage.dart';
 
 class Notelist extends StatefulWidget {
@@ -37,11 +36,13 @@ class _NotelistState extends State<Notelist> {
         onPressed: () {
           getToEdit(
               DatabaseModel(
-                  title: '',
-                  description: '',
-                  priority: 0,
-                  id: null,
-                  date: null),
+                title: '',
+                description: '',
+                priority: 0,
+                id: null,
+                date: null,
+                deadlineTime: null,
+              ),
               'ADD TASK',
               'ADD');
         },
@@ -68,7 +69,7 @@ class _NotelistState extends State<Notelist> {
           child: ListTile(
 //
             isThreeLine: true,
-            // dense: true,
+            dense: true,
             onTap: () {
               getToEdit(
                   DatabaseModel(
@@ -78,6 +79,7 @@ class _NotelistState extends State<Notelist> {
                     priority: notes[index].priority,
                     date: notes[index].date,
                     deadline: notes[index].deadline,
+                    deadlineTime: notes[index].deadlineTime,
                   ),
                   'EDIT TASK',
                   'SAVE');
@@ -100,7 +102,12 @@ class _NotelistState extends State<Notelist> {
                 child: Column(
                   children: [
                     _descNullAlign(notes[index]),
-                    _deadlineIsNull(notes[index]),
+                    Row(
+                      children: [
+                        _deadlineIsNull(notes[index]),
+                        _deadlineTimeIsNull(notes[index]),
+                      ],
+                    ),
                     Align(
                       alignment: Alignment.centerLeft,
                       child: Padding(
@@ -108,7 +115,7 @@ class _NotelistState extends State<Notelist> {
                         child: Text(
                           'last modified on ${notes[index].date}',
                           style: TextStyle(
-                            fontSize: 10,
+                            fontSize: 9,
                           ),
                         ),
                       ),
@@ -149,11 +156,6 @@ class _NotelistState extends State<Notelist> {
       });
     } else {
       _refreshListView();
-      Scaffold.of(context).showSnackBar(
-        SnackBar(
-          content: Text('the operation was not unsuccessful'),
-        ),
-      );
       // we have to have an alert dialog stating that the operations were not succcessful
     }
   }
@@ -272,7 +274,12 @@ class _NotelistState extends State<Notelist> {
         alignment: Alignment.centerLeft,
         child: Padding(
           child: Container(
-            padding: EdgeInsets.only(left: 5, right: 5),
+            padding: EdgeInsets.only(
+              left: 5,
+              right: 5,
+              top: 1,
+              bottom: 1,
+            ),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(20),
               gradient: LinearGradient(
@@ -283,6 +290,45 @@ class _NotelistState extends State<Notelist> {
             ),
             child: Text(
               '${note.deadline}',
+              style: TextStyle(
+                fontSize: 10,
+                color: Colors.white,
+              ),
+            ),
+          ),
+          padding: EdgeInsets.only(top: 8),
+        ),
+      );
+    }
+  }
+
+  Widget _deadlineTimeIsNull(DatabaseModel note) {
+    if (note.deadlineTime == null || note.deadlineTime == ' ') {
+      return Align(
+        alignment: Alignment.centerLeft,
+      );
+    } else {
+      return Align(
+        alignment: Alignment.centerLeft,
+        child: Padding(
+          child: Container(
+            margin: EdgeInsets.only(left: 10),
+            padding: EdgeInsets.only(
+              left: 5,
+              right: 5,
+              top: 1,
+              bottom: 1,
+            ),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(20),
+              gradient: LinearGradient(
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+                colors: [Colors.cyan[500], Colors.blue[500]],
+              ),
+            ),
+            child: Text(
+              '${note.deadlineTime}',
               style: TextStyle(
                 fontSize: 10,
                 color: Colors.white,

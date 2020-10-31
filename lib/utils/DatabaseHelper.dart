@@ -35,7 +35,8 @@ class DatabaseHelper {
     ${DatabaseModel.colDescription} TEXT,
     ${DatabaseModel.colPriority} INTEGER NOT NULL,
     ${DatabaseModel.colDate} TEXT,
-    ${DatabaseModel.colDeadline} TEXT 
+    ${DatabaseModel.colDeadline} TEXT ,
+    ${DatabaseModel.colDeadtime} TEXT
   )
   ''');
   }

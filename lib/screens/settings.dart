@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:url_launcher/url_launcher.dart';
 import 'package:flutter/material.dart';
 
@@ -59,7 +57,7 @@ class SettingState extends State<Settings> {
         children: [
           ListTile(
             leading: Icon(Icons.contacts),
-            title: Text('Contact or Report an Issue'),
+            title: Text('Contact Us'),
             onTap: () async {
               if (await canLaunch(
                   'https://www.instagram.com/shimron.alakkal/')) {
@@ -70,7 +68,7 @@ class SettingState extends State<Settings> {
             },
           ),
           ListTile(
-            leading: Icon(Icons.support),
+            leading: Icon(Icons.code),
             title: Text('Contribute to Code'),
             onTap: () async {
               await _launchItemInPhone('https://www.github.com/ShimronAlakkal');
@@ -80,14 +78,6 @@ class SettingState extends State<Settings> {
             endIndent: 20,
             indent: 20,
             color: Colors.grey,
-          ),
-          ListTile(
-            leading: Icon(Icons.mail_rounded),
-            title: Text('Subscribe to our News Letters'),
-            onTap: () async {
-              await _launchItemInPhone(
-                  'here is the url for news letter things');
-            },
           ),
           ExpansionTile(
             leading: Icon(Icons.file_copy),
@@ -99,25 +89,24 @@ class SettingState extends State<Settings> {
               Padding(
                 padding: const EdgeInsets.all(12.0),
                 child: Text(
+                  "First of all,THANK YOU SO MUCH FOR DOWNLOADING THE APP :)"
+                  "\n\n"
                   "BY USING THIS APP , YOU AGREE TO OUR PRIVACY POLICY STATED BELOW"
-                  "\n "
-                  "\n"
-                  "This is an app that offers no cloud or internet services (except for the ability to the user to contact the developers"
-                  " ,which is not a service provided by this app ) . None of the user's data given to the app is stored in the cloud or any "
+                  "\n\n"
+                  "This app offers no cloud or internet services (except for the cases where the user want to contact the developer or contribute) . None of the user's data given to the app is stored in the cloud or any "
                   "servers nor is it given to another companies , indivaiduals or any corporations in any way , other than the need for legal things."
                   " All of your data is stored "
-                  "locally on your device which hosts this app . We are in no way responsible for the leak of your private data due to your lack of care or mistakes "
+                  "within your device which hosts this app . We are in no way responsible for the leak of your private data due to your lack of care or mistakes "
                   ". You will not "
-                  "recieve an email or any other notification from us stating a requirement of your private data (like bank account number , drivers lisence etc.)."
-                  " You agree  that we have complete "
-                  "rights over the terms and conditions of this app and its services and we could change it anytime we want to along with all the above stated"
-                  " terms and conditions to use our service . We value your privacy and we are always trying to not let you down in any way that we can"
-                  " think of. If at all a bug or a problem is found in the app , the users are free to let the developers at STELLAR know of the problem and "
-                  " a quick fix could be done to the app without (hopefully) having other damages to the user ."
-                  "\n"
+                  "recieve an email or any other notification from us stating a requirement of your private data (like bank account number , drivers lisence ,phone number etc.)."
+                  " You also agree that we have complete "
+                  "right over the terms and conditions of this app and its services and we could change it anytime we want to along with all the above stated"
+                  " terms and conditions. We value your privacy and we are always trying to not let you down in any way that we can"
+                  " think of. If at all a bug or a problem is found in the app , the users are free to let the developers at STELLAR BASICS know of the problem and actions will be taken ."
+                  "\n\n"
                   "Hope our service helps you"
                   "\n"
-                  "TEAM AMBER from STELLAR",
+                  "STELLAR BASICS",
                 ),
               ),
             ],
@@ -131,18 +120,17 @@ class SettingState extends State<Settings> {
             children: [
               Padding(
                 padding: const EdgeInsets.all(12.0),
-                child: Text(
-                    "Credits for the base version of Stellar's amber notes"
-                    "\n "
-                    "Amber notes mobile :"
-                    "\n developed by Shimron Alakkal"
-                    "\n Amber notes web-hostings and webside services "
-                    "\n developed by Sharoon Rafeek"
-                    "\n for more information , feel free to contact the developers of the app from the above option"
-                    "\n onoarding svgs from freepik.com "
-                    "\n Hope our service helps you"
-                    "\n"
-                    "TEAM AMBER from STELLAR Basics"),
+                child:
+                    Text("Credits for the base version of Stellar's PAPERCLIP"
+                        "\n "
+                        "PAPERCLIP mobile :"
+                        "\n developed by Shimron Alakkal"
+                        "\nPAPERCLIP newsletters :"
+                        "\ndeveloped by Sharoon Rafeek"
+                        "\n"
+                        "\n Hope our service helps you"
+                        "\n"
+                        "Stellar Basics"),
               ),
             ],
           ),
