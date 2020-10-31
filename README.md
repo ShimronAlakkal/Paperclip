@@ -42,5 +42,6 @@ dependencies:
 #
 feel free to [connect](https://www.instagram.com/shimron.alakkal) with us if you have any feedbacks or bug reports or literally anything about the app
 and also check out our other repository where you could learn mobile app dev using python (just some fundamentals)
-![ReadMe Card](https://github-readme-stats.vercel.app/api/pin/?username=ShimronAlakkal&repo=Kivy-KivyMD-tutorials)
+
+> ![ReadMe Card](https://github-readme-stats.vercel.app/api/pin/?username=ShimronAlakkal&repo=Kivy-KivyMD-tutorials)
 
