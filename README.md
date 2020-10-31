@@ -40,4 +40,7 @@ dependencies:
 4 . Cloud storage for your notes just so as to keep your device free of storage consumption
 ```
 #
-and also feel free to [connect](https://www.instagram.com/shimron.alakkal) with us if you have any feedbacks or bug reports or literally anything about the app
+feel free to [connect](https://www.instagram.com/shimron.alakkal) with us if you have any feedbacks or bug reports or literally anything about the app
+and also check out our other repository where you could learn mobile app dev using python (just some fundamentals)
+![ReadMe Card](https://github-readme-stats.vercel.app/api/pin/?username=ShimronAlakkal&repo=Kivy-KivyMD-tutorials)
+
