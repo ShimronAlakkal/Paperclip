@@ -20,7 +20,7 @@ class ThemeNotifier extends ChangeNotifier {
   bool get darkTheme => _darkTheme;
 
   ThemeNotifier() {
-    _darkTheme = true;
+    _darkTheme = false;
     _loadFromPrefs();
   }
 
@@ -37,7 +37,7 @@ class ThemeNotifier extends ChangeNotifier {
 
   _loadFromPrefs() async {
     await _initPrefs();
-    _darkTheme = _preferences.getBool(key) ?? true;
+    _darkTheme = _preferences.getBool(key) ?? false;
     notifyListeners();
   }
 

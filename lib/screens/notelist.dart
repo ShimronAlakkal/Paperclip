@@ -57,86 +57,109 @@ class _NotelistState extends State<Notelist> {
     );
   }
 
-  ListView getListView() {
-    return ListView.builder(
-      itemCount: notes.length,
-      itemBuilder: (BuildContext context, int index) {
-        return Card(
-          borderOnForeground: true,
-          margin: EdgeInsets.symmetric(vertical: 5, horizontal: 8),
-          elevation: 5,
-          // color: Colors.white,
-          child: ListTile(
+  Widget getListView() {
+    if (notes.length >= 1) {
+      return ListView.builder(
+        itemCount: notes.length,
+        itemBuilder: (BuildContext context, int index) {
+          return Card(
+            borderOnForeground: true,
+            margin: EdgeInsets.symmetric(vertical: 5, horizontal: 8),
+            elevation: 5,
+            // color: Colors.white,
+            child: ListTile(
 //
-            isThreeLine: true,
-            dense: true,
-            onTap: () {
-              getToEdit(
-                  DatabaseModel(
-                    id: notes[index].id,
-                    title: notes[index].title,
-                    description: notes[index].description,
-                    priority: notes[index].priority,
-                    date: notes[index].date,
-                    deadline: notes[index].deadline,
-                    deadlineTime: notes[index].deadlineTime,
+              isThreeLine: true,
+              dense: true,
+              onTap: () {
+                getToEdit(
+                    DatabaseModel(
+                      id: notes[index].id,
+                      title: notes[index].title,
+                      description: notes[index].description,
+                      priority: notes[index].priority,
+                      date: notes[index].date,
+                      deadline: notes[index].deadline,
+                      deadlineTime: notes[index].deadlineTime,
+                    ),
+                    'EDIT TASK',
+                    'SAVE');
+              },
+              leading: CircleAvatar(
+                backgroundColor: Colors.amber,
+                child: _priorityIconLeading(notes[index].priority),
+              ),
+              title: Center(
+                child: Align(
+                  alignment: Alignment.centerLeft,
+                  child: Text(
+                    '${notes[index].title}',
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 19),
                   ),
-                  'EDIT TASK',
-                  'SAVE');
-            },
-            leading: CircleAvatar(
-              backgroundColor: Colors.amber,
-              child: _priorityIconLeading(notes[index].priority),
-            ),
-            title: Center(
-              child: Align(
-                alignment: Alignment.centerLeft,
-                child: Text(
-                  '${notes[index].title}',
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 19),
                 ),
               ),
-            ),
-            subtitle: Center(
-              child: Container(
-                child: Column(
-                  children: [
-                    _descNullAlign(notes[index]),
-                    Row(
-                      children: [
-                        _deadlineIsNull(notes[index]),
-                        _deadlineTimeIsNull(notes[index]),
-                      ],
-                    ),
-                    Align(
-                      alignment: Alignment.centerLeft,
-                      child: Padding(
-                        padding: const EdgeInsets.only(top: 10.0, bottom: 5),
-                        child: Text(
-                          'last modified on ${notes[index].date}',
-                          style: TextStyle(
-                            fontSize: 9,
+              subtitle: Center(
+                child: Container(
+                  child: Column(
+                    children: [
+                      _descNullAlign(notes[index]),
+                      Row(
+                        children: [
+                          _deadlineIsNull(notes[index]),
+                          _deadlineTimeIsNull(notes[index]),
+                        ],
+                      ),
+                      Align(
+                        alignment: Alignment.centerLeft,
+                        child: Padding(
+                          padding: const EdgeInsets.only(top: 10.0, bottom: 5),
+                          child: Text(
+                            'last modified on ${notes[index].date}',
+                            style: TextStyle(
+                              fontSize: 9,
+                            ),
                           ),
                         ),
-                      ),
-                    )
-                  ],
+                      )
+                    ],
+                  ),
+                ),
+              ),
+              trailing: IconButton(
+                icon: Icon(Icons.delete),
+                onPressed: () async {
+                  _showAlertDialogue(context, 'Alert',
+                      ' Are you sure you want to delete this item ? ', index);
+                  _refreshListView();
+// the code to delete items form the list view goes here in the space available
+                },
+              ),
+            ),
+          );
+        },
+      );
+    } else {
+      return Center(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Image.asset('images/clip-min.png'),
+            Padding(
+              padding: const EdgeInsets.only(top: 15.0),
+              child: Text(
+                'Enter a note to view here',
+                style: TextStyle(
+                  letterSpacing: 2,
+                  color: Colors.amber,
+                  fontWeight: FontWeight.bold,
                 ),
               ),
             ),
-            trailing: IconButton(
-              icon: Icon(Icons.delete),
-              onPressed: () async {
-                _showAlertDialogue(context, 'Alert',
-                    ' Are you sure you want to delete this item ? ', index);
-                _refreshListView();
-// the code to delete items form the list view goes here in the space available
-              },
-            ),
-          ),
-        );
-      },
-    );
+          ],
+        ),
+      );
+    }
   }
 
   void getToEdit(
