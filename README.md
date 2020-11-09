@@ -40,6 +40,8 @@ dependencies:
 4 . Cloud storage for your notes just so as to keep your device free of storage consumption
 ```
 #
+A fat (heavier) version of the app for android is available as `app_release.apk` above. Feel free to try it.
+#
 feel free to [connect](https://www.instagram.com/shimron.alakkal) with us if you have any feedbacks or bug reports or literally anything about the app
 and also check out our other repository where you could learn mobile app dev using python (just some fundamentals)
 
