@@ -35,13 +35,17 @@ dependencies:
 ## Upcoming features 
 ```
 1 . Local Notifications
-2 .  alarms with the notifications 
+2 . alarms with the notifications 
 3 . Local Authentications for much more privacy , much simply
 4 . Cloud storage for your notes just so as to keep your device free of storage consumption
 ```
 #
 A fat (heavier) version of the app for android is available as `app_release.apk` above. Feel free to try it.
-#
+#  
+find other apps from stellar 
+> ![ReadMe Card](https://github-readme-stats.vercel.app/api/pin/?username=ShimronAlakkal&repo=Stellar-OCR)
+
+#  
 feel free to [connect](https://www.instagram.com/shimron.alakkal) with us if you have any feedbacks or bug reports or literally anything about the app
 and also check out our other repository where you could learn mobile app dev using python (just some fundamentals)
 
