@@ -43,7 +43,7 @@ dependencies:
 A fat (heavier) version of the app for android is available as `app_release.apk` above. Feel free to try it.
 #  
 find other apps from stellar 
-> ![ReadMe Card](https://github-readme-stats.vercel.app/api/pin/?username=ShimronAlakkal&repo=Stellar-OCR)
+> ![ReadMe Card](https://github-readme-stats.vercel.app/api/pin/?username=ShimronAlakkal&repo=StellarAssistance-OCR)
 
 #  
 feel free to [connect](https://www.instagram.com/shimron.alakkal) with us if you have any feedbacks or bug reports or literally anything about the app
