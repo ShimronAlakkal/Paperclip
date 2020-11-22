@@ -1,8 +1,9 @@
 # P A P E R C L I P    
 > from Stellar Basics
 #
-## STELLAR BASICS NOTES KEEPER 
-> this is basically a beta of the `STELLAR BASICS` notes app which allows you to keep your notes ,tasks ,deadlines , events ,and many other things you can come up with in one single platfrom . You could use our service for no cost , whatsoever .
+
+An app that allows you to keep your important notes and tasks together. Keep track of your tasks and events and more with deadlines, timings etc...
+
 
 ## download the official `PAPERCLIP` app (stable version 1)
 Download the official version ( stable 1 / vi) of **`Paperclip`** by clicking  <a id="raw-url" href="https://raw.githubusercontent.com/ShimronAlakkal/Stellar-Basics-Paperclip/master/Paperclip vi.apk">here</a>
