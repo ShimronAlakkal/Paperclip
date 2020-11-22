@@ -7,7 +7,7 @@
 ## download the official `PAPERCLIP` app (stable version 1)
 The official app for android is given as **`Paperclip vi`** above
 #  
-the official app is also available at <a id="raw-url" href="https://raw.githubusercontent.com/ShimronAlakkal/Stellar-Basics-Paperclip/master/filename">Download FILE</a>
+the official app is also available at <a id="raw-url" href="https://raw.githubusercontent.com/ShimronAlakkal/Stellar-Basics-Paperclip/master/Paperclip vi.apk">here</a>
  
 #  
 ## Installation or source code
