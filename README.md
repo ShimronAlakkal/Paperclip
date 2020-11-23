@@ -6,12 +6,13 @@ An app that allows you to keep your important notes and tasks together. Keep tra
 
 
 ## download the official `PAPERCLIP` app (stable version 1)
-#  
+  
 Download **`Paperclip`** by clicking  <a id="raw-url" href="https://raw.githubusercontent.com/ShimronAlakkal/Stellar-Basics-Paperclip/master/Paperclip vi.apk">here</a>
  
 #  
-## Installation or source code
-```bash 
+## get the source code 
+
+```cmd
 git clone https://github.com/ShimronAlakkal/Stellar-Basics-Notes-manager
 cd Stellar-Basics-Notes-manager
 ```
@@ -36,7 +37,6 @@ dependencies:
   url_launcher: ^5.7.5
 ```
 
-# 
 ## Upcoming features 
 ```
 1 . Local Notifications
@@ -46,7 +46,7 @@ dependencies:
 ```
 #
 Download **`Paperclip`** by clicking  <a id="raw-url" href="https://raw.githubusercontent.com/ShimronAlakkal/Stellar-Basics-Paperclip/master/Paperclip vi.apk">    here</a>
-#  
+######
 A fat (heavier) version of the app for android is available as `app_release.apk` above. Feel free to try it.
 #  
 find other apps from stellar 
