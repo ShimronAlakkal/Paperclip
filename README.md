@@ -5,10 +5,10 @@
 An app that allows you to keep your important notes and tasks together. Keep track of your tasks and events and more with deadlines, timings etc...
 
 
-## download the official `PAPERCLIP` app (stable version 1)
+## Download the official `PAPERCLIP` app  
   
-Download **`Paperclip`** by clicking  <a id="raw-url" href="https://raw.githubusercontent.com/ShimronAlakkal/Stellar-Basics-Paperclip/master/Paperclip vi.apk">here</a>
- 
+Download **`Paperclip`** by clicking  `<a id="raw-url" href="https://raw.githubusercontent.com/ShimronAlakkal/Stellar-Basics-Paperclip/master/Paperclip vi.apk">here</a>`
+> stable version 1
 #  
 ## get the source code 
 
