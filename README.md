@@ -1,12 +1,13 @@
 # P A P E R C L I P    
-> from Stellar Basics
+###### > from `Stellar Basics`
 #
 
 An app that allows you to keep your important notes and tasks together. Keep track of your tasks and events and more with deadlines, timings etc...
 
 
 ## download the official `PAPERCLIP` app (stable version 1)
-Download the official version ( stable 1 / vi) of **`Paperclip`** by clicking  <a id="raw-url" href="https://raw.githubusercontent.com/ShimronAlakkal/Stellar-Basics-Paperclip/master/Paperclip vi.apk">here</a>
+#  
+Download **`Paperclip`** by clicking  <a id="raw-url" href="https://raw.githubusercontent.com/ShimronAlakkal/Stellar-Basics-Paperclip/master/Paperclip vi.apk">here</a>
  
 #  
 ## Installation or source code
@@ -44,6 +45,8 @@ dependencies:
 4 . Cloud storage for your notes just so as to keep your device free of storage consumption
 ```
 #
+Download **`Paperclip`** by clicking  <a id="raw-url" href="https://raw.githubusercontent.com/ShimronAlakkal/Stellar-Basics-Paperclip/master/Paperclip vi.apk">    here</a>
+#  
 A fat (heavier) version of the app for android is available as `app_release.apk` above. Feel free to try it.
 #  
 find other apps from stellar 
