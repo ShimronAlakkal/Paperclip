@@ -64,5 +64,5 @@ and also check out our other repository where you could learn mobile app dev usi
 
 
 
-[<img src="https://www.adweek.com/brand-marketing/after-2-years-has-everyone-finally-chilled-out-about-the-instagram-logo/" width="25"/>](https://www.instagram.com/shimron.alakkal)
+[<img src="https://www.flaticon.com/svg/static/icons/svg/87/87390.svg" width="25"/>](https://www.instagram.com/shimron.alakkal)
 
