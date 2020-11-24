@@ -10,12 +10,15 @@ An app that allows you to keep your important notes and tasks together. Keep tra
 Download **`Paperclip`** by clicking  <a id="raw-url" href="https://raw.githubusercontent.com/ShimronAlakkal/Stellar-Basics-Paperclip/master/Paperclip vi.apk">here</a>
 > stable version 1
 #  
-## get the source code 
+## get the source code on your device, locally
 
 ```cmd
 git clone https://github.com/ShimronAlakkal/Stellar-Basics-Notes-manager
 cd Stellar-Basics-Notes-manager
 ```
+#   
+# fork this repo 
+[fork this repository](https://github.com/ShimronAlakkal/Stellar-Basics-Paperclip/fork)
 
 #   
 ## Stack Used
