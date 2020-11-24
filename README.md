@@ -55,6 +55,8 @@ find other apps from stellar
 #  
 feel free to [connect](https://www.instagram.com/shimron.alakkal) with us if you have any feedbacks or bug reports or literally anything about the app
 and also check out our other repository where you could learn mobile app dev using python (just some fundamentals).
+
+
 Also feel free to fork this project if you think so by clicking [<img src="https://user-images.githubusercontent.com/17777237/54873012-40fa5b00-4dd6-11e9-98e0-cc436426c720.png" width="18"/>](https://github.com/ShimronAlakkal/Stellar-Basics-Paperclip/fork)
 
 > ![ReadMe Card](https://github-readme-stats.vercel.app/api/pin/?username=ShimronAlakkal&repo=Kivy-KivyMD-tutorials)
