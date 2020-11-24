@@ -53,12 +53,12 @@ find other apps from stellar
 > ![ReadMe Card](https://github-readme-stats.vercel.app/api/pin/?username=ShimronAlakkal&repo=StellarAssistance-OCR)
 
 #  
-feel free to [connect](https://www.instagram.com/shimron.alakkal) with us if you have any feedbacks or bug reports or literally anything about the app
+feel free to [<img src="https://www.flaticon.com/svg/static/icons/svg/87/87390.svg" width="15"/>](https://www.instagram.com/shimron.alakkal)[connect](https://www.instagram.com/shimron.alakkal) with us if you have any feedbacks or bug reports or literally anything about the app
 and also check out our other repository where you could learn mobile app dev using python (just some fundamentals)
 
 > ![ReadMe Card](https://github-readme-stats.vercel.app/api/pin/?username=ShimronAlakkal&repo=Kivy-KivyMD-tutorials)
 
-
+#  
 
 
 [<img src="https://www.flaticon.com/svg/static/icons/svg/87/87390.svg" width="25"/>](https://www.instagram.com/shimron.alakkal)   [fork this repository](https://github.com/ShimronAlakkal/Stellar-Basics-Paperclip/fork)
