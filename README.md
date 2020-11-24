@@ -61,4 +61,4 @@ and also check out our other repository where you could learn mobile app dev usi
 #  
 
 
-[<img src="https://www.flaticon.com/svg/static/icons/svg/87/87390.svg" width="25"/>](https://www.instagram.com/shimron.alakkal)        [<img src="https://user-images.githubusercontent.com/17777237/54873012-40fa5b00-4dd6-11e9-98e0-cc436426c720.png" width="20"/>](https://github.com/ShimronAlakkal/Stellar-Basics-Paperclip/fork)    [<img src="https://www.flaticon.com/svg/static/icons/svg/1051/1051333.svg" width="25"/>](https://www.linkedin.com/in/shimron-alakkal-884831196/)
+[<img src="https://www.flaticon.com/svg/static/icons/svg/87/87390.svg" width="25"/>](https://www.instagram.com/shimron.alakkal)        [<img src="https://user-images.githubusercontent.com/17777237/54873012-40fa5b00-4dd6-11e9-98e0-cc436426c720.png" width="18"/>](https://github.com/ShimronAlakkal/Stellar-Basics-Paperclip/fork)    [<img src="https://www.flaticon.com/svg/static/icons/svg/1051/1051333.svg" width="25"/>](https://www.linkedin.com/in/shimron-alakkal-884831196/)
