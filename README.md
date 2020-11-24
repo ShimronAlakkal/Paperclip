@@ -17,10 +17,7 @@ git clone https://github.com/ShimronAlakkal/Stellar-Basics-Notes-manager
 cd Stellar-Basics-Notes-manager
 ```
 #   
-# fork this repo 
-[fork this repository](https://github.com/ShimronAlakkal/Stellar-Basics-Paperclip/fork)
 
-#   
 ## Stack Used
 ```
 Flutter 
@@ -64,5 +61,6 @@ and also check out our other repository where you could learn mobile app dev usi
 
 
 
-[<img src="https://www.flaticon.com/svg/static/icons/svg/87/87390.svg" width="25"/>](https://www.instagram.com/shimron.alakkal)
+[<img src="https://www.flaticon.com/svg/static/icons/svg/87/87390.svg" width="25"/>](https://www.instagram.com/shimron.alakkal)   [fork this repository](https://github.com/ShimronAlakkal/Stellar-Basics-Paperclip/fork)
+
 
