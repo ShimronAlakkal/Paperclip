@@ -61,3 +61,8 @@ and also check out our other repository where you could learn mobile app dev usi
 
 > ![ReadMe Card](https://github-readme-stats.vercel.app/api/pin/?username=ShimronAlakkal&repo=Kivy-KivyMD-tutorials)
 
+
+
+
+[<img src="https://pngtree.com/freepng/instagram-icon-instagram-logo_3560510.html" width="25"/>](https://www.instagram.com/shimron.alakkal)
+
