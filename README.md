@@ -52,9 +52,12 @@ dependencies:
 
 
 
+
+
 Download **`Paperclip`** by clicking  <a id="raw-url" href="https://raw.githubusercontent.com/ShimronAlakkal/Stellar-Basics-Paperclip/master/Paperclip vi.apk">    here</a>
 ######
-A fat (heavier) version of the app for android is available as `app_release.apk` above. Feel free to try it.
+
+
 
 
 
