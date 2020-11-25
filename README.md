@@ -28,7 +28,6 @@ cd Stellar-Basics-Notes-manager
 Flutter 
 Dart
 ```
-> 
 ```
 dependencies:
   flutter:
@@ -40,6 +39,9 @@ dependencies:
   shared_preferences: ^0.5.8
   sqflite: ^1.3.1+1
   url_launcher: ^5.7.5
+ 
+dev_dependecies:
+  
 ```
 
 ## Upcoming features 
