@@ -8,8 +8,8 @@ An app that allows you to keep your important notes and tasks together. Keep tra
 
 ## Download the official `PAPERCLIP` app  
   
-Download **`Paperclip`** by clicking  <a id="raw-url" href="https://raw.githubusercontent.com/ShimronAlakkal/Stellar-Basics-Paperclip/master/Paperclip vi.apk">here</a>
-> stable version 1
+Download **`Paperclip`** for android by clicking  <a id="raw-url" href="https://raw.githubusercontent.com/ShimronAlakkal/Stellar-Basics-Paperclip/master/Paperclip vi.apk">here</a>
+> stable version 1 ( debug = True )
 
 
 
