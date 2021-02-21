@@ -12,7 +12,7 @@ Future<void> main() async {
           return MaterialApp(
             debugShowCheckedModeBanner: false,
             theme: notifier.darkTheme == true ? dark : light,
-            title: 'Paperclip',
+            title: 'Paperclip Stable Beta 1 ',
             home: Notelist(),
           );
         },
