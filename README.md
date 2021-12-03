@@ -1,6 +1,4 @@
 # P A P E R C L I P    
-###### > from `Stellar Basics`
-
 
 
 An app that allows you to keep your important notes and tasks together. Keep track of your tasks and events and more with deadlines, timings etc...
